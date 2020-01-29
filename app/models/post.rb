@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: posts
@@ -12,4 +14,8 @@
 class Post < ApplicationRecord
   belongs_to :user
   has_many :comments
+
+  def all_comments
+    comments
+  end
 end

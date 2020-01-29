@@ -11,10 +11,13 @@
 #  updated_at :datetime         not null
 #
 
-require 'test_helper'
+module Types
+  class PostType < Types::BaseObject
+    description 'Post Type'
 
-class PostTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+    field :id, ID, null: false
+    field :body, String, null: true
+
+    field :all_comments, [Types::CommentType], null: true
+  end
 end
