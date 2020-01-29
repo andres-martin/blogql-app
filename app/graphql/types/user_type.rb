@@ -29,5 +29,15 @@ class Types::UserType < Types::BaseObject
   field :country, String, null: true
 
   field :all_posts, [Types::PostType], null: false
-  field :full_address, String, null: false
+  field :full_address, String, null: false, description: 'A concatenation of full address'
+
+  # field :address, String, null: true, description: "A concatenation of the present address components"
+
+  # # We intentionally exclude any address component that is nil, empty or made only of whitespaces
+  # # and we join the rest using a comma.
+  # def address
+  #   ([:street, :number, :postcode, :city, :country].map do |a|
+  #     object.send(a)&.strip
+  #   end.compact - ['']).join(', ')
+  #  end
 end
