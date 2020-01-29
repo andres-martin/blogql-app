@@ -23,5 +23,7 @@ module Types
       User.where(id: id).destroy_all
       true
     end
+
+    field :create_post, Types::PostType, mutation: Mutations::CreatePost
   end
 end
