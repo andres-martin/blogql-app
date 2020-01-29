@@ -18,6 +18,6 @@ module Types
     field :id, ID, null: false
     field :body, String, null: true
 
-    field :all_comments, [Types::CommentType], null: true
+    field :comments, [Types::CommentType], null: true
   end
 end

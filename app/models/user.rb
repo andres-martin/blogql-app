@@ -19,10 +19,6 @@
 class User < ApplicationRecord
   has_many :posts
 
-  def all_posts
-    posts
-  end
-
   def full_address
     [street, number, city, postcode, country].compact.join ' '
   end
