@@ -17,7 +17,7 @@
 #
 
 class User < ApplicationRecord
-  has_many :posts
+  has_many :posts, :dependent => :delete_all
 
   def full_address
     [street, number, city, postcode, country].compact.join ' '

@@ -5,7 +5,6 @@ module Types
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
 
-    # TODO: remove me
     field :users, [Types::UserType], null: false,
                                description: 'An array of all  users in db'
     def users
@@ -19,6 +18,12 @@ module Types
       Post.all
     end
 
+    field :comments, [Types::CommentType], null: false, description: "An array of all comments stored in the db"
+
+    def comments
+      Comment.all
+    end
+    
     field :user, Types::UserType, null: true, description: 'User Type' do # root
       argument :id, ID, required: true
     end
