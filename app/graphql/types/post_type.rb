@@ -18,7 +18,7 @@ module Types
 
     argument :id, ID, required: false
     argument :body, String, required: false
-    argument :user_id, Int, required: true, camelize: false
+    argument :user_id, ID, required: true, camelize: false
     
   end
 

@@ -17,7 +17,10 @@
 #
 
 class User < ApplicationRecord
-  has_many :posts, :dependent => :destroy
+  has_many :posts, dependent: :destroy
+
+  validates :first_name, presence: true
+  validates :number, numericality: { only_integer: true }
 
   def full_address
     [street, number, city, postcode, country].compact.join ' '

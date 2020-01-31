@@ -46,6 +46,11 @@ module Types
     field :posts, [Types::PostType], null: false
     field :full_address, String, null: false, description: 'A concatenation of full address'
 
+    field :errors, [Types::ErrorType], null: true
+
+    def errors
+      object.errors.map { |e| { field_name: e, errors: object.errors[e] } }
+    end
     # field :address, String, null: true, description: "A concatenation of the present address components"
 
     # # We intentionally exclude any address component that is nil, empty or made only of whitespaces
