@@ -2,16 +2,19 @@
 #
 # Table name: users
 #
-#  id         :bigint           not null, primary key
-#  first_name :string
-#  last_name  :string
-#  street     :string
-#  number     :integer
-#  city       :string
-#  postcode   :string
-#  country    :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id              :bigint           not null, primary key
+#  first_name      :string
+#  last_name       :string
+#  street          :string
+#  number          :integer
+#  city            :string
+#  postcode        :string
+#  country         :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  email           :string
+#  password_digest :string
+#  role            :integer
 #
 
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

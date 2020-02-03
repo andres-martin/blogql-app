@@ -14,12 +14,11 @@
 module Types
   class CommentInputType < GraphQL::Schema::InputObject
     graphql_name 'CommentInputType'
-    description "All the attributes for creating a new comment"
+    description 'All the attributes for creating a new comment'
 
     argument :id, ID, required: false
     argument :body, String, required: false
     argument :post_id, Int, required: true, camelize: false
-    
   end
 
   class CommentType < Types::BaseObject

@@ -4,22 +4,26 @@
 #
 # Table name: users
 #
-#  id         :bigint           not null, primary key
-#  first_name :string
-#  last_name  :string
-#  street     :string
-#  number     :integer
-#  city       :string
-#  postcode   :string
-#  country    :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id              :bigint           not null, primary key
+#  first_name      :string
+#  last_name       :string
+#  street          :string
+#  number          :integer
+#  city            :string
+#  postcode        :string
+#  country         :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  email           :string
+#  password_digest :string
+#  role            :integer
 #
+
 module Types
   class UserInputType < GraphQL::Schema::InputObject
-    graphql_name "UserInputType"
-    description "All the attributes for creating an user"
-   
+    graphql_name 'UserInputType'
+    description 'All the attributes for creating an user'
+
     argument :id, ID, required: false
     argument :first_name, String, required: false, camelize: false
     argument :last_name, String, required: false, camelize: false
@@ -28,8 +32,10 @@ module Types
     argument :city, String, required: false
     argument :postcode, String, required: false
     argument :country, String, required: false
+    argument :email, String, required: false
+    argument :role, String, required: false
+    argument :password, String, required: false
   end
-  
 
   class UserType < Types::BaseObject
     description 'User types'
@@ -42,6 +48,8 @@ module Types
     field :city, String, null: true
     field :postcode, String, null: true
     field :country, String, null: true
+    field :email, String, null: true
+    field :role, String, null: true
 
     field :posts, [Types::PostType], null: false
     field :full_address, String, null: false, description: 'A concatenation of full address'

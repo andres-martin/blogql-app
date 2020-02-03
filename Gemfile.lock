@@ -60,6 +60,7 @@ GEM
       activerecord (>= 3.2, < 7.0)
       rake (>= 10.4, < 14.0)
     ast (2.4.0)
+    bcrypt (3.1.13)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
     builder (3.2.4)
@@ -166,6 +167,8 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    strong_migrations (0.6.1)
+      activerecord (>= 5)
     thor (1.0.1)
     thread_safe (0.3.6)
     tzinfo (1.2.6)
@@ -181,6 +184,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)
   byebug
   graphiql-rails
@@ -193,6 +197,7 @@ DEPENDENCIES
   rubocop-rails
   spring
   spring-watcher-listen (~> 2.0.0)
+  strong_migrations
   tzinfo-data
 
 RUBY VERSION

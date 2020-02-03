@@ -1,5 +1,6 @@
+# frozen_string_literal: true
+
 class Mutations::CreatePost < GraphQL::Schema::Mutation
- 
   argument :post, Types::PostInputType, required: true
 
   def resolve(post:)

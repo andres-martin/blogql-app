@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Types
   class ErrorType < Types::BaseObject
     description 'An acive record error for GraphQL'
